@@ -1,6 +1,6 @@
 ﻿namespace QuanlyKiluat
 {
-    partial class FormNhapsuaKLcualop
+    partial class FormHVDGKL
     {
         /// <summary>
         /// Required designer variable.
@@ -32,9 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhapsuaKLcualop));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHVDGKL));
             this.dgvchinhsuarl = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSVXoa = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnSVSua = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnSVThem = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnSVHuy = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnSVLuu = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.lbhvkl = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lbmahv = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dtpthoigian = new System.Windows.Forms.DateTimePicker();
@@ -45,7 +51,6 @@
             this.txtls = new System.Windows.Forms.TextBox();
             this.txtht = new System.Windows.Forms.TextBox();
             this.txtdkl = new System.Windows.Forms.TextBox();
-            this.txtndg = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnhd = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtcdg = new System.Windows.Forms.TextBox();
@@ -54,13 +59,10 @@
             this.btn = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnSVXoa = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnSVSua = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnSVThem = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnSVHuy = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnSVLuu = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.txtndg = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvchinhsuarl)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvchinhsuarl
@@ -118,9 +120,8 @@
             this.dgvchinhsuarl.RowTemplate.Height = 24;
             this.dgvchinhsuarl.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvchinhsuarl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvchinhsuarl.Size = new System.Drawing.Size(1494, 338);
-            this.dgvchinhsuarl.TabIndex = 73;
-            this.dgvchinhsuarl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvchinhsuarl_CellClick);
+            this.dgvchinhsuarl.Size = new System.Drawing.Size(1502, 338);
+            this.dgvchinhsuarl.TabIndex = 74;
             // 
             // panel1
             // 
@@ -130,176 +131,10 @@
             this.panel1.Controls.Add(this.btnSVHuy);
             this.panel1.Controls.Add(this.btnSVLuu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 748);
+            this.panel1.Location = new System.Drawing.Point(0, 798);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1494, 71);
-            this.panel1.TabIndex = 74;
-            // 
-            // lbhvkl
-            // 
-            this.lbhvkl.AutoSize = true;
-            this.lbhvkl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbhvkl.Location = new System.Drawing.Point(182, 497);
-            this.lbhvkl.Name = "lbhvkl";
-            this.lbhvkl.Size = new System.Drawing.Size(0, 17);
-            this.lbhvkl.TabIndex = 93;
-            // 
-            // lbmahv
-            // 
-            this.lbmahv.AutoSize = true;
-            this.lbmahv.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbmahv.Location = new System.Drawing.Point(182, 563);
-            this.lbmahv.Name = "lbmahv";
-            this.lbmahv.Size = new System.Drawing.Size(55, 17);
-            this.lbmahv.TabIndex = 92;
-            this.lbmahv.Text = "Mã HV";
-            // 
-            // dtpthoigian
-            // 
-            this.dtpthoigian.Location = new System.Drawing.Point(185, 600);
-            this.dtpthoigian.Name = "dtpthoigian";
-            this.dtpthoigian.Size = new System.Drawing.Size(261, 22);
-            this.dtpthoigian.TabIndex = 91;
-            // 
-            // bunifuCustomLabel11
-            // 
-            this.bunifuCustomLabel11.AutoSize = true;
-            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(29, 600);
-            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(79, 17);
-            this.bunifuCustomLabel11.TabIndex = 90;
-            this.bunifuCustomLabel11.Text = "Thời Gian";
-            // 
-            // txtkqkl
-            // 
-            this.txtkqkl.FormattingEnabled = true;
-            this.txtkqkl.Location = new System.Drawing.Point(1178, 637);
-            this.txtkqkl.Name = "txtkqkl";
-            this.txtkqkl.Size = new System.Drawing.Size(261, 24);
-            this.txtkqkl.TabIndex = 89;
-            // 
-            // bunifuCustomLabel9
-            // 
-            this.bunifuCustomLabel9.AutoSize = true;
-            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(1022, 640);
-            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(140, 17);
-            this.bunifuCustomLabel9.TabIndex = 88;
-            this.bunifuCustomLabel9.Text = "Kết Quả rèn luyện";
-            // 
-            // txthdd
-            // 
-            this.txthdd.Location = new System.Drawing.Point(1178, 586);
-            this.txthdd.Name = "txthdd";
-            this.txthdd.Size = new System.Drawing.Size(261, 22);
-            this.txthdd.TabIndex = 87;
-            // 
-            // txtls
-            // 
-            this.txtls.Location = new System.Drawing.Point(1178, 543);
-            this.txtls.Name = "txtls";
-            this.txtls.Size = new System.Drawing.Size(261, 22);
-            this.txtls.TabIndex = 86;
-            // 
-            // txtht
-            // 
-            this.txtht.Location = new System.Drawing.Point(700, 643);
-            this.txtht.Name = "txtht";
-            this.txtht.Size = new System.Drawing.Size(261, 22);
-            this.txtht.TabIndex = 85;
-            // 
-            // txtdkl
-            // 
-            this.txtdkl.Location = new System.Drawing.Point(700, 586);
-            this.txtdkl.Name = "txtdkl";
-            this.txtdkl.Size = new System.Drawing.Size(261, 22);
-            this.txtdkl.TabIndex = 84;
-            // 
-            // txtndg
-            // 
-            this.txtndg.Location = new System.Drawing.Point(700, 541);
-            this.txtndg.Name = "txtndg";
-            this.txtndg.Size = new System.Drawing.Size(261, 22);
-            this.txtndg.TabIndex = 83;
-            // 
-            // bunifuCustomLabel8
-            // 
-            this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(1022, 549);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(113, 17);
-            this.bunifuCustomLabel8.TabIndex = 82;
-            this.bunifuCustomLabel8.Text = "Điểm Lối Sống";
-            // 
-            // btnhd
-            // 
-            this.btnhd.AutoSize = true;
-            this.btnhd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhd.Location = new System.Drawing.Point(1022, 592);
-            this.btnhd.Name = "btnhd";
-            this.btnhd.Size = new System.Drawing.Size(126, 17);
-            this.btnhd.TabIndex = 81;
-            this.btnhd.Text = "Điểm Hoạt Động";
-            // 
-            // txtcdg
-            // 
-            this.txtcdg.Location = new System.Drawing.Point(185, 643);
-            this.txtcdg.Name = "txtcdg";
-            this.txtcdg.Size = new System.Drawing.Size(261, 22);
-            this.txtcdg.TabIndex = 80;
-            // 
-            // btndkl
-            // 
-            this.btndkl.AutoSize = true;
-            this.btndkl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndkl.Location = new System.Drawing.Point(544, 592);
-            this.btndkl.Name = "btndkl";
-            this.btndkl.Size = new System.Drawing.Size(100, 17);
-            this.btndkl.TabIndex = 79;
-            this.btndkl.Text = "Điểm Kỉ Luật";
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(544, 547);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(123, 17);
-            this.bunifuCustomLabel5.TabIndex = 78;
-            this.bunifuCustomLabel5.Text = "Người Đánh Giá";
-            // 
-            // btn
-            // 
-            this.btn.AutoSize = true;
-            this.btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn.Location = new System.Drawing.Point(29, 649);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(109, 17);
-            this.btn.TabIndex = 77;
-            this.btn.Text = "Cấp Đánh Giá";
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(544, 649);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(110, 17);
-            this.bunifuCustomLabel3.TabIndex = 76;
-            this.bunifuCustomLabel3.Text = "Điểm Học Tập";
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(29, 563);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(55, 17);
-            this.bunifuCustomLabel2.TabIndex = 75;
-            this.bunifuCustomLabel2.Text = "Mã HV";
+            this.panel1.Size = new System.Drawing.Size(1502, 71);
+            this.panel1.TabIndex = 75;
             // 
             // btnSVXoa
             // 
@@ -433,41 +268,219 @@
             this.btnSVLuu.Visible = false;
             this.btnSVLuu.Click += new System.EventHandler(this.btnSVLuu_Click);
             // 
-            // FormNhapsuaKLcualop
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtndg);
+            this.panel2.Controls.Add(this.lbhvkl);
+            this.panel2.Controls.Add(this.lbmahv);
+            this.panel2.Controls.Add(this.dtpthoigian);
+            this.panel2.Controls.Add(this.bunifuCustomLabel11);
+            this.panel2.Controls.Add(this.txtkqkl);
+            this.panel2.Controls.Add(this.bunifuCustomLabel9);
+            this.panel2.Controls.Add(this.txthdd);
+            this.panel2.Controls.Add(this.txtls);
+            this.panel2.Controls.Add(this.txtht);
+            this.panel2.Controls.Add(this.txtdkl);
+            this.panel2.Controls.Add(this.bunifuCustomLabel8);
+            this.panel2.Controls.Add(this.btnhd);
+            this.panel2.Controls.Add(this.txtcdg);
+            this.panel2.Controls.Add(this.btndkl);
+            this.panel2.Controls.Add(this.bunifuCustomLabel5);
+            this.panel2.Controls.Add(this.btn);
+            this.panel2.Controls.Add(this.bunifuCustomLabel3);
+            this.panel2.Controls.Add(this.bunifuCustomLabel2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 338);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1502, 460);
+            this.panel2.TabIndex = 76;
+            // 
+            // lbhvkl
+            // 
+            this.lbhvkl.AutoSize = true;
+            this.lbhvkl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbhvkl.Location = new System.Drawing.Point(199, 146);
+            this.lbhvkl.Name = "lbhvkl";
+            this.lbhvkl.Size = new System.Drawing.Size(0, 17);
+            this.lbhvkl.TabIndex = 112;
+            // 
+            // lbmahv
+            // 
+            this.lbmahv.AutoSize = true;
+            this.lbmahv.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbmahv.Location = new System.Drawing.Point(199, 212);
+            this.lbmahv.Name = "lbmahv";
+            this.lbmahv.Size = new System.Drawing.Size(55, 17);
+            this.lbmahv.TabIndex = 111;
+            this.lbmahv.Text = "Mã HV";
+            // 
+            // dtpthoigian
+            // 
+            this.dtpthoigian.Location = new System.Drawing.Point(202, 249);
+            this.dtpthoigian.Name = "dtpthoigian";
+            this.dtpthoigian.Size = new System.Drawing.Size(261, 22);
+            this.dtpthoigian.TabIndex = 110;
+            // 
+            // bunifuCustomLabel11
+            // 
+            this.bunifuCustomLabel11.AutoSize = true;
+            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(46, 249);
+            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(79, 17);
+            this.bunifuCustomLabel11.TabIndex = 109;
+            this.bunifuCustomLabel11.Text = "Thời Gian";
+            // 
+            // txtkqkl
+            // 
+            this.txtkqkl.FormattingEnabled = true;
+            this.txtkqkl.Location = new System.Drawing.Point(1195, 286);
+            this.txtkqkl.Name = "txtkqkl";
+            this.txtkqkl.Size = new System.Drawing.Size(261, 24);
+            this.txtkqkl.TabIndex = 108;
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(1039, 289);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(140, 17);
+            this.bunifuCustomLabel9.TabIndex = 107;
+            this.bunifuCustomLabel9.Text = "Kết Quả rèn luyện";
+            // 
+            // txthdd
+            // 
+            this.txthdd.Location = new System.Drawing.Point(1195, 235);
+            this.txthdd.Name = "txthdd";
+            this.txthdd.Size = new System.Drawing.Size(261, 22);
+            this.txthdd.TabIndex = 106;
+            // 
+            // txtls
+            // 
+            this.txtls.Location = new System.Drawing.Point(1195, 192);
+            this.txtls.Name = "txtls";
+            this.txtls.Size = new System.Drawing.Size(261, 22);
+            this.txtls.TabIndex = 105;
+            // 
+            // txtht
+            // 
+            this.txtht.Location = new System.Drawing.Point(717, 292);
+            this.txtht.Name = "txtht";
+            this.txtht.Size = new System.Drawing.Size(261, 22);
+            this.txtht.TabIndex = 104;
+            // 
+            // txtdkl
+            // 
+            this.txtdkl.Location = new System.Drawing.Point(717, 235);
+            this.txtdkl.Name = "txtdkl";
+            this.txtdkl.Size = new System.Drawing.Size(261, 22);
+            this.txtdkl.TabIndex = 103;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(1039, 198);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(113, 17);
+            this.bunifuCustomLabel8.TabIndex = 101;
+            this.bunifuCustomLabel8.Text = "Điểm Lối Sống";
+            // 
+            // btnhd
+            // 
+            this.btnhd.AutoSize = true;
+            this.btnhd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnhd.Location = new System.Drawing.Point(1039, 241);
+            this.btnhd.Name = "btnhd";
+            this.btnhd.Size = new System.Drawing.Size(126, 17);
+            this.btnhd.TabIndex = 100;
+            this.btnhd.Text = "Điểm Hoạt Động";
+            // 
+            // txtcdg
+            // 
+            this.txtcdg.Location = new System.Drawing.Point(202, 292);
+            this.txtcdg.Name = "txtcdg";
+            this.txtcdg.Size = new System.Drawing.Size(261, 22);
+            this.txtcdg.TabIndex = 99;
+            this.txtcdg.Text = "học viên";
+            // 
+            // btndkl
+            // 
+            this.btndkl.AutoSize = true;
+            this.btndkl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndkl.Location = new System.Drawing.Point(561, 241);
+            this.btndkl.Name = "btndkl";
+            this.btndkl.Size = new System.Drawing.Size(100, 17);
+            this.btndkl.TabIndex = 98;
+            this.btndkl.Text = "Điểm Kỉ Luật";
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(561, 196);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(123, 17);
+            this.bunifuCustomLabel5.TabIndex = 97;
+            this.bunifuCustomLabel5.Text = "Người Đánh Giá";
+            // 
+            // btn
+            // 
+            this.btn.AutoSize = true;
+            this.btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn.Location = new System.Drawing.Point(46, 298);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(109, 17);
+            this.btn.TabIndex = 96;
+            this.btn.Text = "Cấp Đánh Giá";
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(561, 298);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(110, 17);
+            this.bunifuCustomLabel3.TabIndex = 95;
+            this.bunifuCustomLabel3.Text = "Điểm Học Tập";
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(46, 212);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(55, 17);
+            this.bunifuCustomLabel2.TabIndex = 94;
+            this.bunifuCustomLabel2.Text = "Mã HV";
+            // 
+            // txtndg
+            // 
+            this.txtndg.AutoSize = true;
+            this.txtndg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtndg.Location = new System.Drawing.Point(714, 195);
+            this.txtndg.Name = "txtndg";
+            this.txtndg.Size = new System.Drawing.Size(55, 17);
+            this.txtndg.TabIndex = 113;
+            this.txtndg.Text = "Mã HV";
+            // 
+            // FormHVDGKL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1494, 819);
-            this.Controls.Add(this.lbhvkl);
-            this.Controls.Add(this.lbmahv);
-            this.Controls.Add(this.dtpthoigian);
-            this.Controls.Add(this.bunifuCustomLabel11);
-            this.Controls.Add(this.txtkqkl);
-            this.Controls.Add(this.bunifuCustomLabel9);
-            this.Controls.Add(this.txthdd);
-            this.Controls.Add(this.txtls);
-            this.Controls.Add(this.txtht);
-            this.Controls.Add(this.txtdkl);
-            this.Controls.Add(this.txtndg);
-            this.Controls.Add(this.bunifuCustomLabel8);
-            this.Controls.Add(this.btnhd);
-            this.Controls.Add(this.txtcdg);
-            this.Controls.Add(this.btndkl);
-            this.Controls.Add(this.bunifuCustomLabel5);
-            this.Controls.Add(this.btn);
-            this.Controls.Add(this.bunifuCustomLabel3);
-            this.Controls.Add(this.bunifuCustomLabel2);
+            this.ClientSize = new System.Drawing.Size(1502, 869);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvchinhsuarl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormNhapsuaKLcualop";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormNhapsuaKLcualop";
-            this.Load += new System.EventHandler(this.FormNhapsuaKLcualop_Load);
+            this.Name = "FormHVDGKL";
+            this.Text = "FormHVDGKL";
             ((System.ComponentModel.ISupportInitialize)(this.dgvchinhsuarl)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -480,6 +493,7 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnSVThem;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSVHuy;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSVLuu;
+        private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuCustomLabel lbhvkl;
         private Bunifu.Framework.UI.BunifuCustomLabel lbmahv;
         private System.Windows.Forms.DateTimePicker dtpthoigian;
@@ -490,7 +504,6 @@
         private System.Windows.Forms.TextBox txtls;
         private System.Windows.Forms.TextBox txtht;
         private System.Windows.Forms.TextBox txtdkl;
-        private System.Windows.Forms.TextBox txtndg;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuCustomLabel btnhd;
         private System.Windows.Forms.TextBox txtcdg;
@@ -499,5 +512,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel btn;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel txtndg;
     }
 }
