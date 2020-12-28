@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,11 +34,39 @@ namespace QuanlyKiluat.Models
         public Hocvien(string[] data)
         {
             MaHV = data[0];
-            TenHV = data[1];
+            Malop = data[1];
             GioiTinh = data[2];
             Chucvu = data[3];
             Capbac = data[4];
-            Malop = data[5];
+            TenHV = data[5];
+        }
+        public static Hocvien getmaHv(string Malop)
+        {
+            DataTable dt = new DataTable();
+            dt = Models.Connection.getData("spgetMaHV", CommandType.StoredProcedure,
+                new string[1] { "@MaHV" }, new object[1] { Malop });
+            var obj = dt.Rows[0].ItemArray;
+            var data = obj.Where(x => x != null)
+                       .Select(x => x.ToString())
+                       .ToArray();
+            return new Hocvien(data);
+        }
+        public static List<List<string>> getHv()
+        {
+            List<List<string>> re = new List<List<string>>();
+            List<string> maNV = new List<string>();
+            List<string> matKhau = new List<string>();
+            DataTable dt = new DataTable();
+            dt = Models.Connection.getData("Select MaHV,MaLop from Hocvien", CommandType.Text);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                maNV.Add(dt.Rows[i][0].ToString().Trim());
+                matKhau.Add(dt.Rows[i][1].ToString().Trim());
+            }
+            re.Add(maNV);
+            re.Add(matKhau);
+            Console.Write(matKhau.Count);
+            return re;
         }
     }
 }

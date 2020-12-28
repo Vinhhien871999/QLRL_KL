@@ -26,10 +26,7 @@ namespace QuanlyKiluat
         }
         private void hideSubmenu()
         {
-            if (pnQLKL.Visible == true)
-            {
-                pnQLKL.Visible = false;
-            }
+            
         }
         private void showSubmenu(Panel submenu)
         {
@@ -43,7 +40,8 @@ namespace QuanlyKiluat
         }
         private void btnKL_Click(object sender, EventArgs e)
         {
-            showSubmenu(pnQLKL);
+            //showSubmenu(pnQLKL);
+            AbrirFormEnPanel(new FormQLKL());
         }
         private void AbrirFormEnPanel(object Formijo)
         {

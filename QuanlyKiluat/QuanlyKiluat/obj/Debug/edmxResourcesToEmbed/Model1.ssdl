@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Quanlykiluat1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Daidoi">
+    <Key>
+      <PropertyRef Name="MaDD" />
+    </Key>
+    <Property Name="MaDD" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenDD" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="giamsat">
+    <Key>
+      <PropertyRef Name="Mags" />
+    </Key>
+    <Property Name="Mags" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Tennguoigiamsat" Type="nvarchar" MaxLength="30" />
+    <Property Name="Chucvu" Type="nvarchar" MaxLength="20" />
+    <Property Name="Capbac" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Hocvien">
+    <Key>
+      <PropertyRef Name="MaHV" />
+    </Key>
+    <Property Name="MaHV" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenHV" Type="nvarchar" MaxLength="40" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="Chucvu" Type="nvarchar" MaxLength="30" />
+    <Property Name="Capbac" Type="nvarchar" MaxLength="20" />
+    <Property Name="Malop" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="HocVien_Phanloaikiluat">
+    <Key>
+      <PropertyRef Name="Mahv_plkl" />
+      <PropertyRef Name="Thoigian" />
+    </Key>
+    <Property Name="Mahv_plkl" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Thoigian" Type="datetime" Nullable="false" />
+    <Property Name="MaHV" Type="nchar" MaxLength="10" />
+    <Property Name="MaPLKL" Type="nchar" MaxLength="10" />
+    <Property Name="Capdanhgia" Type="nvarchar" MaxLength="20" />
+    <Property Name="Nguoidanhgia" Type="nvarchar" MaxLength="30" />
+    <Property Name="Diemkiluat" Type="int" />
+    <Property Name="Diemhoctap" Type="int" />
+    <Property Name="Diemloisong" Type="int" />
+    <Property Name="Diemhoatdongdoan" Type="int" />
+  </EntityType>
+  <EntityType Name="Hocvien_Phanloairenluyen">
+    <Key>
+      <PropertyRef Name="Mahv_plrl" />
+      <PropertyRef Name="Thoigian" />
+    </Key>
+    <Property Name="Mahv_plrl" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Thoigian" Type="datetime" Nullable="false" />
+    <Property Name="MaHV" Type="nchar" MaxLength="10" />
+    <Property Name="MaPLRL" Type="nchar" MaxLength="10" />
+    <Property Name="MaGS" Type="nchar" MaxLength="10" />
+    <Property Name="Boi" Type="float" />
+    <Property Name="Chaydai" Type="float" />
+    <Property Name="Chayngan" Type="float" />
+    <Property Name="nhayxa" Type="float" />
+    <Property Name="xa" Type="int" />
+  </EntityType>
+  <EntityType Name="Lop">
+    <Key>
+      <PropertyRef Name="Malop" />
+    </Key>
+    <Property Name="Malop" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Matkhau" Type="varchar" MaxLength="20" />
+    <Property Name="Tenlop" Type="nvarchar" MaxLength="30" />
+    <Property Name="MaDD" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Phanloaikiluat">
+    <Key>
+      <PropertyRef Name="MaPLKL" />
+    </Key>
+    <Property Name="MaPLKL" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenPLKL" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Phanloairenluyen">
+    <Key>
+      <PropertyRef Name="MaPLRL" />
+    </Key>
+    <Property Name="MaPLRL" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenPLRL" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Quanly">
+    <Key>
+      <PropertyRef Name="MaQL" />
+    </Key>
+    <Property Name="MaQL" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Matkhau" Type="varchar" MaxLength="20" />
+    <Property Name="Hoten" Type="nvarchar" MaxLength="30" />
+    <Property Name="Chucvu" Type="nvarchar" MaxLength="30" />
+    <Property Name="Capbac" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaDD" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Quychuan">
+    <Key>
+      <PropertyRef Name="MaQCRL" />
+    </Key>
+    <Property Name="MaQCRL" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Noidung" Type="nvarchar" MaxLength="20" />
+    <Property Name="Donvitinh" Type="nvarchar" MaxLength="20" />
+    <Property Name="Gioi" Type="float" />
+    <Property Name="Kha" Type="float" />
+    <Property Name="Trungbinh" Type="float" />
+  </EntityType>
+  <Association Name="FK_gshv">
+    <End Role="giamsat" Type="Self.giamsat" Multiplicity="0..1" />
+    <End Role="Hocvien_Phanloairenluyen" Type="Self.Hocvien_Phanloairenluyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="giamsat">
+        <PropertyRef Name="Mags" />
+      </Principal>
+      <Dependent Role="Hocvien_Phanloairenluyen">
+        <PropertyRef Name="MaGS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hvkl">
+    <End Role="Phanloaikiluat" Type="Self.Phanloaikiluat" Multiplicity="0..1" />
+    <End Role="HocVien_Phanloaikiluat" Type="Self.HocVien_Phanloaikiluat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phanloaikiluat">
+        <PropertyRef Name="MaPLKL" />
+      </Principal>
+      <Dependent Role="HocVien_Phanloaikiluat">
+        <PropertyRef Name="MaPLKL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HVL">
+    <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+    <End Role="Hocvien" Type="Self.Hocvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lop">
+        <PropertyRef Name="Malop" />
+      </Principal>
+      <Dependent Role="Hocvien">
+        <PropertyRef Name="Malop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hvplkl">
+    <End Role="Hocvien" Type="Self.Hocvien" Multiplicity="0..1" />
+    <End Role="HocVien_Phanloaikiluat" Type="Self.HocVien_Phanloaikiluat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hocvien">
+        <PropertyRef Name="MaHV" />
+      </Principal>
+      <Dependent Role="HocVien_Phanloaikiluat">
+        <PropertyRef Name="MaHV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hvplrl">
+    <End Role="Hocvien" Type="Self.Hocvien" Multiplicity="0..1" />
+    <End Role="Hocvien_Phanloairenluyen" Type="Self.Hocvien_Phanloairenluyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hocvien">
+        <PropertyRef Name="MaHV" />
+      </Principal>
+      <Dependent Role="Hocvien_Phanloairenluyen">
+        <PropertyRef Name="MaHV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hvrl">
+    <End Role="Phanloairenluyen" Type="Self.Phanloairenluyen" Multiplicity="0..1" />
+    <End Role="Hocvien_Phanloairenluyen" Type="Self.Hocvien_Phanloairenluyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phanloairenluyen">
+        <PropertyRef Name="MaPLRL" />
+      </Principal>
+      <Dependent Role="Hocvien_Phanloairenluyen">
+        <PropertyRef Name="MaPLRL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lopdd">
+    <End Role="Daidoi" Type="Self.Daidoi" Multiplicity="0..1" />
+    <End Role="Lop" Type="Self.Lop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Daidoi">
+        <PropertyRef Name="MaDD" />
+      </Principal>
+      <Dependent Role="Lop">
+        <PropertyRef Name="MaDD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_qldd1">
+    <End Role="Daidoi" Type="Self.Daidoi" Multiplicity="0..1" />
+    <End Role="Quanly" Type="Self.Quanly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Daidoi">
+        <PropertyRef Name="MaDD" />
+      </Principal>
+      <Dependent Role="Quanly">
+        <PropertyRef Name="MaDD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="delete_giamsat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mags" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="func_NextID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Mahv_plrl" Type="nchar" Mode="In" />
+    <Parameter Name="prefix" Type="varchar" Mode="In" />
+    <Parameter Name="size" Type="int" Mode="In" />
+  </Function>
+  <Function Name="func_NextIDKL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Mahv_plkl" Type="nchar" Mode="In" />
+    <Parameter Name="prefix" Type="varchar" Mode="In" />
+    <Parameter Name="size" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getHocvien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHV" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="getmaplkl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="getmaplrl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="insert_giamsat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mags" Type="nchar" Mode="In" />
+    <Parameter Name="Tennguoigiamsat" Type="nvarchar" Mode="In" />
+    <Parameter Name="Chucvu" Type="nvarchar" Mode="In" />
+    <Parameter Name="Capbac" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="insert_HVKL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mahv_plkl" Type="nchar" Mode="In" />
+    <Parameter Name="Thoigian" Type="datetime" Mode="In" />
+    <Parameter Name="MaHV" Type="nchar" Mode="In" />
+    <Parameter Name="MaPLKL" Type="nchar" Mode="In" />
+    <Parameter Name="Capdanhgia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nguoidanhgia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Diemkiluat" Type="int" Mode="In" />
+    <Parameter Name="Diemhoctap" Type="int" Mode="In" />
+    <Parameter Name="Diemloisong" Type="int" Mode="In" />
+    <Parameter Name="Diemhoatdongdoan" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insert_HVRL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mahv_plrl" Type="nchar" Mode="In" />
+    <Parameter Name="Thoigian" Type="datetime" Mode="In" />
+    <Parameter Name="MaHV" Type="nchar" Mode="In" />
+    <Parameter Name="MaPLRL" Type="nchar" Mode="In" />
+    <Parameter Name="MaGS" Type="nchar" Mode="In" />
+    <Parameter Name="Boi" Type="float" Mode="In" />
+    <Parameter Name="Chaydai" Type="float" Mode="In" />
+    <Parameter Name="Chayngan" Type="float" Mode="In" />
+    <Parameter Name="nhayxa" Type="float" Mode="In" />
+    <Parameter Name="xa" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spgetMaHV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHV" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="spgetMaLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaLop" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="spgetMaQl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaQL" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="spgetTableAllLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spgetTableAN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spgetTableBD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spgetTableCNTT2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spgettablegiamsat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spgettablehvkl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHV" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="spgetTableHVLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Malop" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="spgettablehvplkl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHV" Type="nchar" Mode="In" />
+  </Function>
+  <Function Name="spgettableplkl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spgettableplrl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spgettablequychuanKL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spgettablequychuanRl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="update_giamsat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mags" Type="nchar" Mode="In" />
+    <Parameter Name="Tennguoigiamsat" Type="nvarchar" Mode="In" />
+    <Parameter Name="Chucvu" Type="nvarchar" Mode="In" />
+    <Parameter Name="Capbac" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="update_HVKL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mahv_plkl" Type="nchar" Mode="In" />
+    <Parameter Name="Thoigian" Type="datetime" Mode="In" />
+    <Parameter Name="MaHV" Type="nchar" Mode="In" />
+    <Parameter Name="MaPLKL" Type="nchar" Mode="In" />
+    <Parameter Name="Capdanhgia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nguoidanhgia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Diemkiluat" Type="int" Mode="In" />
+    <Parameter Name="Diemhoctap" Type="int" Mode="In" />
+    <Parameter Name="Diemloisong" Type="int" Mode="In" />
+    <Parameter Name="Diemhoatdongdoan" Type="int" Mode="In" />
+  </Function>
+  <Function Name="update_HVRL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mahv_plrl" Type="nchar" Mode="In" />
+    <Parameter Name="Thoigian" Type="datetime" Mode="In" />
+    <Parameter Name="MaHV" Type="nchar" Mode="In" />
+    <Parameter Name="MaPLRL" Type="nchar" Mode="In" />
+    <Parameter Name="MaGS" Type="nchar" Mode="In" />
+    <Parameter Name="Boi" Type="float" Mode="In" />
+    <Parameter Name="Chaydai" Type="float" Mode="In" />
+    <Parameter Name="Chayngan" Type="float" Mode="In" />
+    <Parameter Name="nhayxa" Type="float" Mode="In" />
+    <Parameter Name="xa" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="Quanlykiluat1ModelStoreContainer">
+    <EntitySet Name="Daidoi" EntityType="Self.Daidoi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="giamsat" EntityType="Self.giamsat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hocvien" EntityType="Self.Hocvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HocVien_Phanloaikiluat" EntityType="Self.HocVien_Phanloaikiluat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hocvien_Phanloairenluyen" EntityType="Self.Hocvien_Phanloairenluyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lop" EntityType="Self.Lop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phanloaikiluat" EntityType="Self.Phanloaikiluat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phanloairenluyen" EntityType="Self.Phanloairenluyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quanly" EntityType="Self.Quanly" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quychuan" EntityType="Self.Quychuan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_gshv" Association="Self.FK_gshv">
+      <End Role="giamsat" EntitySet="giamsat" />
+      <End Role="Hocvien_Phanloairenluyen" EntitySet="Hocvien_Phanloairenluyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hvkl" Association="Self.FK_hvkl">
+      <End Role="Phanloaikiluat" EntitySet="Phanloaikiluat" />
+      <End Role="HocVien_Phanloaikiluat" EntitySet="HocVien_Phanloaikiluat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HVL" Association="Self.FK_HVL">
+      <End Role="Lop" EntitySet="Lop" />
+      <End Role="Hocvien" EntitySet="Hocvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hvplkl" Association="Self.FK_hvplkl">
+      <End Role="Hocvien" EntitySet="Hocvien" />
+      <End Role="HocVien_Phanloaikiluat" EntitySet="HocVien_Phanloaikiluat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hvplrl" Association="Self.FK_hvplrl">
+      <End Role="Hocvien" EntitySet="Hocvien" />
+      <End Role="Hocvien_Phanloairenluyen" EntitySet="Hocvien_Phanloairenluyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hvrl" Association="Self.FK_hvrl">
+      <End Role="Phanloairenluyen" EntitySet="Phanloairenluyen" />
+      <End Role="Hocvien_Phanloairenluyen" EntitySet="Hocvien_Phanloairenluyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lopdd" Association="Self.FK_lopdd">
+      <End Role="Daidoi" EntitySet="Daidoi" />
+      <End Role="Lop" EntitySet="Lop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_qldd1" Association="Self.FK_qldd1">
+      <End Role="Daidoi" EntitySet="Daidoi" />
+      <End Role="Quanly" EntitySet="Quanly" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

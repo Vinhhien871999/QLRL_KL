@@ -102,5 +102,23 @@ namespace QuanlyKiluat.Models
                 new string[1] { "@MaHV" }, new object[1] { MaHV });
             return dt;
         }
+        public static DataTable gettablephaihvplkl(string MaHV)
+        {
+            DataTable dt = new DataTable();
+            dt = Models.Connection.getData("spgettablephaihvplkl", CommandType.StoredProcedure,
+                new string[1] { "@MaHV" }, new object[1] { MaHV });
+            return dt;
+        }
+        public static Hocvien getmaHvv(string Malop)
+        {
+            DataTable dt = new DataTable();
+            dt = Models.Connection.getData("spgetMaHV", CommandType.StoredProcedure,
+                new string[1] { "@MaHV" }, new object[1] { Malop });
+            var obj = dt.Rows[0].ItemArray;
+            var data = obj.Where(x => x != null)
+                       .Select(x => x.ToString())
+                       .ToArray();
+            return new Hocvien(data);
+        }
     }
 }

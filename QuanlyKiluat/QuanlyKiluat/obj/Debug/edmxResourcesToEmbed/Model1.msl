@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Quanlykiluat1ModelStoreContainer" CdmEntityContainer="Quanlykiluat1Entities">
+    <EntitySetMapping Name="Daidois">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.Daidoi">
+        <MappingFragment StoreEntitySet="Daidoi">
+          <ScalarProperty Name="MaDD" ColumnName="MaDD" />
+          <ScalarProperty Name="TenDD" ColumnName="TenDD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="giamsats">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.giamsat">
+        <MappingFragment StoreEntitySet="giamsat">
+          <ScalarProperty Name="Mags" ColumnName="Mags" />
+          <ScalarProperty Name="Tennguoigiamsat" ColumnName="Tennguoigiamsat" />
+          <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+          <ScalarProperty Name="Capbac" ColumnName="Capbac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hocviens">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.Hocvien">
+        <MappingFragment StoreEntitySet="Hocvien">
+          <ScalarProperty Name="MaHV" ColumnName="MaHV" />
+          <ScalarProperty Name="TenHV" ColumnName="TenHV" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+          <ScalarProperty Name="Capbac" ColumnName="Capbac" />
+          <ScalarProperty Name="Malop" ColumnName="Malop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HocVien_Phanloaikiluat">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.HocVien_Phanloaikiluat">
+        <MappingFragment StoreEntitySet="HocVien_Phanloaikiluat">
+          <ScalarProperty Name="Mahv_plkl" ColumnName="Mahv_plkl" />
+          <ScalarProperty Name="Thoigian" ColumnName="Thoigian" />
+          <ScalarProperty Name="MaHV" ColumnName="MaHV" />
+          <ScalarProperty Name="MaPLKL" ColumnName="MaPLKL" />
+          <ScalarProperty Name="Capdanhgia" ColumnName="Capdanhgia" />
+          <ScalarProperty Name="Nguoidanhgia" ColumnName="Nguoidanhgia" />
+          <ScalarProperty Name="Diemkiluat" ColumnName="Diemkiluat" />
+          <ScalarProperty Name="Diemhoctap" ColumnName="Diemhoctap" />
+          <ScalarProperty Name="Diemloisong" ColumnName="Diemloisong" />
+          <ScalarProperty Name="Diemhoatdongdoan" ColumnName="Diemhoatdongdoan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hocvien_Phanloairenluyen">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.Hocvien_Phanloairenluyen">
+        <MappingFragment StoreEntitySet="Hocvien_Phanloairenluyen">
+          <ScalarProperty Name="Mahv_plrl" ColumnName="Mahv_plrl" />
+          <ScalarProperty Name="Thoigian" ColumnName="Thoigian" />
+          <ScalarProperty Name="MaHV" ColumnName="MaHV" />
+          <ScalarProperty Name="MaPLRL" ColumnName="MaPLRL" />
+          <ScalarProperty Name="MaGS" ColumnName="MaGS" />
+          <ScalarProperty Name="Boi" ColumnName="Boi" />
+          <ScalarProperty Name="Chaydai" ColumnName="Chaydai" />
+          <ScalarProperty Name="Chayngan" ColumnName="Chayngan" />
+          <ScalarProperty Name="nhayxa" ColumnName="nhayxa" />
+          <ScalarProperty Name="xa" ColumnName="xa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lops">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.Lop">
+        <MappingFragment StoreEntitySet="Lop">
+          <ScalarProperty Name="Malop" ColumnName="Malop" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tenlop" ColumnName="Tenlop" />
+          <ScalarProperty Name="MaDD" ColumnName="MaDD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phanloaikiluats">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.Phanloaikiluat">
+        <MappingFragment StoreEntitySet="Phanloaikiluat">
+          <ScalarProperty Name="MaPLKL" ColumnName="MaPLKL" />
+          <ScalarProperty Name="TenPLKL" ColumnName="TenPLKL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phanloairenluyens">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.Phanloairenluyen">
+        <MappingFragment StoreEntitySet="Phanloairenluyen">
+          <ScalarProperty Name="MaPLRL" ColumnName="MaPLRL" />
+          <ScalarProperty Name="TenPLRL" ColumnName="TenPLRL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quanlies">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.Quanly">
+        <MappingFragment StoreEntitySet="Quanly">
+          <ScalarProperty Name="MaQL" ColumnName="MaQL" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+          <ScalarProperty Name="Capbac" ColumnName="Capbac" />
+          <ScalarProperty Name="MaDD" ColumnName="MaDD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quychuans">
+      <EntityTypeMapping TypeName="Quanlykiluat1Model.Quychuan">
+        <MappingFragment StoreEntitySet="Quychuan">
+          <ScalarProperty Name="MaQCRL" ColumnName="MaQCRL" />
+          <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+          <ScalarProperty Name="Donvitinh" ColumnName="Donvitinh" />
+          <ScalarProperty Name="Gioi" ColumnName="Gioi" />
+          <ScalarProperty Name="Kha" ColumnName="Kha" />
+          <ScalarProperty Name="Trungbinh" ColumnName="Trungbinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getHocvien" FunctionName="Quanlykiluat1Model.Store.getHocvien" />
+    <FunctionImportMapping FunctionImportName="getmaplkl" FunctionName="Quanlykiluat1Model.Store.getmaplkl" />
+    <FunctionImportMapping FunctionImportName="getmaplrl" FunctionName="Quanlykiluat1Model.Store.getmaplrl" />
+    <FunctionImportMapping FunctionImportName="insert_HVKL" FunctionName="Quanlykiluat1Model.Store.insert_HVKL" />
+    <FunctionImportMapping FunctionImportName="insert_HVRL" FunctionName="Quanlykiluat1Model.Store.insert_HVRL" />
+    <FunctionImportMapping FunctionImportName="spgetMaLop" FunctionName="Quanlykiluat1Model.Store.spgetMaLop">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgetMaLop_Result">
+          <ScalarProperty Name="Malop" ColumnName="Malop" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tenlop" ColumnName="Tenlop" />
+          <ScalarProperty Name="MaDD" ColumnName="MaDD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgetMaQl" FunctionName="Quanlykiluat1Model.Store.spgetMaQl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgetMaQl_Result">
+          <ScalarProperty Name="MaQL" ColumnName="MaQL" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+          <ScalarProperty Name="Capbac" ColumnName="Capbac" />
+          <ScalarProperty Name="MaDD" ColumnName="MaDD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgetTableAllLop" FunctionName="Quanlykiluat1Model.Store.spgetTableAllLop">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgetTableAllLop_Result">
+          <ScalarProperty Name="Malop" ColumnName="Malop" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tenlop" ColumnName="Tenlop" />
+          <ScalarProperty Name="MaDD" ColumnName="MaDD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgetTableAN" FunctionName="Quanlykiluat1Model.Store.spgetTableAN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgetTableAN_Result">
+          <ScalarProperty Name="Malop" ColumnName="Malop" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tenlop" ColumnName="Tenlop" />
+          <ScalarProperty Name="MaDD" ColumnName="MaDD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgetTableBD" FunctionName="Quanlykiluat1Model.Store.spgetTableBD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgetTableBD_Result">
+          <ScalarProperty Name="Malop" ColumnName="Malop" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tenlop" ColumnName="Tenlop" />
+          <ScalarProperty Name="MaDD" ColumnName="MaDD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgetTableCNTT2" FunctionName="Quanlykiluat1Model.Store.spgetTableCNTT2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgetTableCNTT2_Result">
+          <ScalarProperty Name="Malop" ColumnName="Malop" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tenlop" ColumnName="Tenlop" />
+          <ScalarProperty Name="MaDD" ColumnName="MaDD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgettablegiamsat" FunctionName="Quanlykiluat1Model.Store.spgettablegiamsat">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgettablegiamsat_Result">
+          <ScalarProperty Name="Mags" ColumnName="Mags" />
+          <ScalarProperty Name="Tennguoigiamsat" ColumnName="Tennguoigiamsat" />
+          <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+          <ScalarProperty Name="Capbac" ColumnName="Capbac" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgetTableHVLop" FunctionName="Quanlykiluat1Model.Store.spgetTableHVLop">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgetTableHVLop_Result">
+          <ScalarProperty Name="MaHV" ColumnName="MaHV" />
+          <ScalarProperty Name="Malop" ColumnName="Malop" />
+          <ScalarProperty Name="Tenlop" ColumnName="Tenlop" />
+          <ScalarProperty Name="TenHV" ColumnName="TenHV" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Capbac" ColumnName="Capbac" />
+          <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgettableplkl" FunctionName="Quanlykiluat1Model.Store.spgettableplkl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgettableplkl_Result">
+          <ScalarProperty Name="Mahv_plkl" ColumnName="Mahv_plkl" />
+          <ScalarProperty Name="Thoigian" ColumnName="Thoigian" />
+          <ScalarProperty Name="MaHV" ColumnName="MaHV" />
+          <ScalarProperty Name="MaPLKL" ColumnName="MaPLKL" />
+          <ScalarProperty Name="Capdanhgia" ColumnName="Capdanhgia" />
+          <ScalarProperty Name="Nguoidanhgia" ColumnName="Nguoidanhgia" />
+          <ScalarProperty Name="Diemkiluat" ColumnName="Diemkiluat" />
+          <ScalarProperty Name="Diemhoctap" ColumnName="Diemhoctap" />
+          <ScalarProperty Name="Diemloisong" ColumnName="Diemloisong" />
+          <ScalarProperty Name="Diemhoatdongdoan" ColumnName="Diemhoatdongdoan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgettableplrl" FunctionName="Quanlykiluat1Model.Store.spgettableplrl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgettableplrl_Result">
+          <ScalarProperty Name="Mahv_plrl" ColumnName="Mahv_plrl" />
+          <ScalarProperty Name="Thoigian" ColumnName="Thoigian" />
+          <ScalarProperty Name="MaHV" ColumnName="MaHV" />
+          <ScalarProperty Name="MaPLRL" ColumnName="MaPLRL" />
+          <ScalarProperty Name="MaGS" ColumnName="MaGS" />
+          <ScalarProperty Name="Boi" ColumnName="Boi" />
+          <ScalarProperty Name="Chaydai" ColumnName="Chaydai" />
+          <ScalarProperty Name="Chayngan" ColumnName="Chayngan" />
+          <ScalarProperty Name="nhayxa" ColumnName="nhayxa" />
+          <ScalarProperty Name="xa" ColumnName="xa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgettablequychuanKL" FunctionName="Quanlykiluat1Model.Store.spgettablequychuanKL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgettablequychuanKL_Result">
+          <ScalarProperty Name="MaQCRL" ColumnName="MaQCRL" />
+          <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+          <ScalarProperty Name="Donvitinh" ColumnName="Donvitinh" />
+          <ScalarProperty Name="Gioi" ColumnName="Gioi" />
+          <ScalarProperty Name="Kha" ColumnName="Kha" />
+          <ScalarProperty Name="Trungbinh" ColumnName="Trungbinh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgettablequychuanRl" FunctionName="Quanlykiluat1Model.Store.spgettablequychuanRl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgettablequychuanRl_Result">
+          <ScalarProperty Name="MaQCRL" ColumnName="MaQCRL" />
+          <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+          <ScalarProperty Name="Donvitinh" ColumnName="Donvitinh" />
+          <ScalarProperty Name="Gioi" ColumnName="Gioi" />
+          <ScalarProperty Name="Kha" ColumnName="Kha" />
+          <ScalarProperty Name="Trungbinh" ColumnName="Trungbinh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="update_HVKL" FunctionName="Quanlykiluat1Model.Store.update_HVKL" />
+    <FunctionImportMapping FunctionImportName="update_HVRL" FunctionName="Quanlykiluat1Model.Store.update_HVRL" />
+    <FunctionImportMapping FunctionImportName="insert_giamsat" FunctionName="Quanlykiluat1Model.Store.insert_giamsat" />
+    <FunctionImportMapping FunctionImportName="delete_giamsat" FunctionName="Quanlykiluat1Model.Store.delete_giamsat" />
+    <FunctionImportMapping FunctionImportName="update_giamsat" FunctionName="Quanlykiluat1Model.Store.update_giamsat" />
+    <FunctionImportMapping FunctionImportName="spgettablehvkl" FunctionName="Quanlykiluat1Model.Store.spgettablehvkl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgettablehvkl_Result">
+          <ScalarProperty Name="Mahv_plkl" ColumnName="Mahv_plkl" />
+          <ScalarProperty Name="Thoigian" ColumnName="Thoigian" />
+          <ScalarProperty Name="MaHV" ColumnName="MaHV" />
+          <ScalarProperty Name="MaPLKL" ColumnName="MaPLKL" />
+          <ScalarProperty Name="Capdanhgia" ColumnName="Capdanhgia" />
+          <ScalarProperty Name="Nguoidanhgia" ColumnName="Nguoidanhgia" />
+          <ScalarProperty Name="Diemkiluat" ColumnName="Diemkiluat" />
+          <ScalarProperty Name="Diemhoctap" ColumnName="Diemhoctap" />
+          <ScalarProperty Name="Diemloisong" ColumnName="Diemloisong" />
+          <ScalarProperty Name="Diemhoatdongdoan" ColumnName="Diemhoatdongdoan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgettablehvplkl" FunctionName="Quanlykiluat1Model.Store.spgettablehvplkl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgettablehvplkl_Result">
+          <ScalarProperty Name="MaHV" ColumnName="MaHV" />
+          <ScalarProperty Name="Mahv_plkl" ColumnName="Mahv_plkl" />
+          <ScalarProperty Name="Thoigian" ColumnName="Thoigian" />
+          <ScalarProperty Name="MaPLKL" ColumnName="MaPLKL" />
+          <ScalarProperty Name="Capdanhgia" ColumnName="Capdanhgia" />
+          <ScalarProperty Name="Nguoidanhgia" ColumnName="Nguoidanhgia" />
+          <ScalarProperty Name="Diemkiluat" ColumnName="Diemkiluat" />
+          <ScalarProperty Name="Diemhoctap" ColumnName="Diemhoctap" />
+          <ScalarProperty Name="Diemloisong" ColumnName="Diemloisong" />
+          <ScalarProperty Name="Diemhoatdongdoan" ColumnName="Diemhoatdongdoan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spgetMaHV" FunctionName="Quanlykiluat1Model.Store.spgetMaHV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Quanlykiluat1Model.spgetMaHV_Result">
+          <ScalarProperty Name="MaHV" ColumnName="MaHV" />
+          <ScalarProperty Name="TenHV" ColumnName="TenHV" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+          <ScalarProperty Name="Capbac" ColumnName="Capbac" />
+          <ScalarProperty Name="Malop" ColumnName="Malop" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

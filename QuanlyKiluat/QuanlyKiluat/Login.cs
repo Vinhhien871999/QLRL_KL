@@ -71,11 +71,18 @@ namespace QuanlyKiluat
             this.Hide();
             nv.Show();
         }
+        void Hocvien(string Mahv)
+        {
+            QuanlyKiluat.FormHocvienDanhgia nv = new QuanlyKiluat.FormHocvienDanhgia(Mahv);
+            this.Hide();
+            nv.Show();
+        }
         private void btndangnhap_Click(object sender, EventArgs e)
         {
             Button login = sender as Button;
             List<List<string>> SV = Models.Lop.getmalop();
             List<List<string>> NV = Models.QLDD.getMaQL();
+            List<List<string>> HV = Models.Hocvien.getHv();
             string maDN = textBoxuser.Text;
             string matKhau = textBoxpass.Text;
             if (SV[0].Contains(maDN.ToUpper()) && SV[1][SV[0].IndexOf(maDN.ToUpper())] == matKhau)
@@ -86,6 +93,11 @@ namespace QuanlyKiluat
             if (NV[0].Contains(maDN.ToUpper()) && NV[1][NV[0].IndexOf(maDN.ToUpper())] == matKhau)
             {
                 QLDD(maDN);
+            }
+            else
+            if (HV[0].Contains(maDN.ToUpper()) && HV[1][HV[0].IndexOf(maDN.ToUpper())] == matKhau)
+            {
+                Hocvien(maDN);
             }
             else
             {

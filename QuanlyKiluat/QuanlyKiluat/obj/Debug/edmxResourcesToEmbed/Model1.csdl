@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Quanlykiluat1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Daidoi">
+    <Key>
+      <PropertyRef Name="MaDD" />
+    </Key>
+    <Property Name="MaDD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenDD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Lops" Relationship="Self.FK_lopdd" FromRole="Daidoi" ToRole="Lop" />
+    <NavigationProperty Name="Quanlies" Relationship="Self.FK_qldd1" FromRole="Daidoi" ToRole="Quanly" />
+  </EntityType>
+  <EntityType Name="giamsat">
+    <Key>
+      <PropertyRef Name="Mags" />
+    </Key>
+    <Property Name="Mags" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Tennguoigiamsat" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Chucvu" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Capbac" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Hocvien_Phanloairenluyen" Relationship="Self.FK_gshv" FromRole="giamsat" ToRole="Hocvien_Phanloairenluyen" />
+  </EntityType>
+  <EntityType Name="Hocvien">
+    <Key>
+      <PropertyRef Name="MaHV" />
+    </Key>
+    <Property Name="MaHV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenHV" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Chucvu" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Capbac" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Malop" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Lop" Relationship="Self.FK_HVL" FromRole="Hocvien" ToRole="Lop" />
+    <NavigationProperty Name="HocVien_Phanloaikiluat" Relationship="Self.FK_hvplkl" FromRole="Hocvien" ToRole="HocVien_Phanloaikiluat" />
+    <NavigationProperty Name="Hocvien_Phanloairenluyen" Relationship="Self.FK_hvplrl" FromRole="Hocvien" ToRole="Hocvien_Phanloairenluyen" />
+  </EntityType>
+  <EntityType Name="HocVien_Phanloaikiluat">
+    <Key>
+      <PropertyRef Name="Mahv_plkl" />
+      <PropertyRef Name="Thoigian" />
+    </Key>
+    <Property Name="Mahv_plkl" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Thoigian" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MaHV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MaPLKL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Capdanhgia" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoidanhgia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Diemkiluat" Type="Int32" />
+    <Property Name="Diemhoctap" Type="Int32" />
+    <Property Name="Diemloisong" Type="Int32" />
+    <Property Name="Diemhoatdongdoan" Type="Int32" />
+    <NavigationProperty Name="Hocvien" Relationship="Self.FK_hvplkl" FromRole="HocVien_Phanloaikiluat" ToRole="Hocvien" />
+    <NavigationProperty Name="Phanloaikiluat" Relationship="Self.FK_hvkl" FromRole="HocVien_Phanloaikiluat" ToRole="Phanloaikiluat" />
+  </EntityType>
+  <EntityType Name="Hocvien_Phanloairenluyen">
+    <Key>
+      <PropertyRef Name="Mahv_plrl" />
+      <PropertyRef Name="Thoigian" />
+    </Key>
+    <Property Name="Mahv_plrl" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Thoigian" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MaHV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MaPLRL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MaGS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Boi" Type="Double" />
+    <Property Name="Chaydai" Type="Double" />
+    <Property Name="Chayngan" Type="Double" />
+    <Property Name="nhayxa" Type="Double" />
+    <Property Name="xa" Type="Int32" />
+    <NavigationProperty Name="giamsat" Relationship="Self.FK_gshv" FromRole="Hocvien_Phanloairenluyen" ToRole="giamsat" />
+    <NavigationProperty Name="Hocvien" Relationship="Self.FK_hvplrl" FromRole="Hocvien_Phanloairenluyen" ToRole="Hocvien" />
+    <NavigationProperty Name="Phanloairenluyen" Relationship="Self.FK_hvrl" FromRole="Hocvien_Phanloairenluyen" ToRole="Phanloairenluyen" />
+  </EntityType>
+  <EntityType Name="Lop">
+    <Key>
+      <PropertyRef Name="Malop" />
+    </Key>
+    <Property Name="Malop" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Matkhau" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Tenlop" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MaDD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Daidoi" Relationship="Self.FK_lopdd" FromRole="Lop" ToRole="Daidoi" />
+    <NavigationProperty Name="Hocviens" Relationship="Self.FK_HVL" FromRole="Lop" ToRole="Hocvien" />
+  </EntityType>
+  <EntityType Name="Phanloaikiluat">
+    <Key>
+      <PropertyRef Name="MaPLKL" />
+    </Key>
+    <Property Name="MaPLKL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenPLKL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HocVien_Phanloaikiluat" Relationship="Self.FK_hvkl" FromRole="Phanloaikiluat" ToRole="HocVien_Phanloaikiluat" />
+  </EntityType>
+  <EntityType Name="Phanloairenluyen">
+    <Key>
+      <PropertyRef Name="MaPLRL" />
+    </Key>
+    <Property Name="MaPLRL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenPLRL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Hocvien_Phanloairenluyen" Relationship="Self.FK_hvrl" FromRole="Phanloairenluyen" ToRole="Hocvien_Phanloairenluyen" />
+  </EntityType>
+  <EntityType Name="Quanly">
+    <Key>
+      <PropertyRef Name="MaQL" />
+    </Key>
+    <Property Name="MaQL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Matkhau" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Hoten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Chucvu" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Capbac" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MaDD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Daidoi" Relationship="Self.FK_qldd1" FromRole="Quanly" ToRole="Daidoi" />
+  </EntityType>
+  <EntityType Name="Quychuan">
+    <Key>
+      <PropertyRef Name="MaQCRL" />
+    </Key>
+    <Property Name="MaQCRL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Noidung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Donvitinh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Gioi" Type="Double" />
+    <Property Name="Kha" Type="Double" />
+    <Property Name="Trungbinh" Type="Double" />
+  </EntityType>
+  <Association Name="FK_lopdd">
+    <End Role="Daidoi" Type="Self.Daidoi" Multiplicity="0..1" />
+    <End Role="Lop" Type="Self.Lop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Daidoi">
+        <PropertyRef Name="MaDD" />
+      </Principal>
+      <Dependent Role="Lop">
+        <PropertyRef Name="MaDD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_qldd1">
+    <End Role="Daidoi" Type="Self.Daidoi" Multiplicity="0..1" />
+    <End Role="Quanly" Type="Self.Quanly" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Daidoi">
+        <PropertyRef Name="MaDD" />
+      </Principal>
+      <Dependent Role="Quanly">
+        <PropertyRef Name="MaDD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gshv">
+    <End Role="giamsat" Type="Self.giamsat" Multiplicity="0..1" />
+    <End Role="Hocvien_Phanloairenluyen" Type="Self.Hocvien_Phanloairenluyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="giamsat">
+        <PropertyRef Name="Mags" />
+      </Principal>
+      <Dependent Role="Hocvien_Phanloairenluyen">
+        <PropertyRef Name="MaGS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HVL">
+    <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+    <End Role="Hocvien" Type="Self.Hocvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lop">
+        <PropertyRef Name="Malop" />
+      </Principal>
+      <Dependent Role="Hocvien">
+        <PropertyRef Name="Malop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hvplkl">
+    <End Role="Hocvien" Type="Self.Hocvien" Multiplicity="0..1" />
+    <End Role="HocVien_Phanloaikiluat" Type="Self.HocVien_Phanloaikiluat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hocvien">
+        <PropertyRef Name="MaHV" />
+      </Principal>
+      <Dependent Role="HocVien_Phanloaikiluat">
+        <PropertyRef Name="MaHV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hvplrl">
+    <End Role="Hocvien" Type="Self.Hocvien" Multiplicity="0..1" />
+    <End Role="Hocvien_Phanloairenluyen" Type="Self.Hocvien_Phanloairenluyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hocvien">
+        <PropertyRef Name="MaHV" />
+      </Principal>
+      <Dependent Role="Hocvien_Phanloairenluyen">
+        <PropertyRef Name="MaHV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hvkl">
+    <End Role="Phanloaikiluat" Type="Self.Phanloaikiluat" Multiplicity="0..1" />
+    <End Role="HocVien_Phanloaikiluat" Type="Self.HocVien_Phanloaikiluat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phanloaikiluat">
+        <PropertyRef Name="MaPLKL" />
+      </Principal>
+      <Dependent Role="HocVien_Phanloaikiluat">
+        <PropertyRef Name="MaPLKL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hvrl">
+    <End Role="Phanloairenluyen" Type="Self.Phanloairenluyen" Multiplicity="0..1" />
+    <End Role="Hocvien_Phanloairenluyen" Type="Self.Hocvien_Phanloairenluyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phanloairenluyen">
+        <PropertyRef Name="MaPLRL" />
+      </Principal>
+      <Dependent Role="Hocvien_Phanloairenluyen">
+        <PropertyRef Name="MaPLRL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Quanlykiluat1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Daidois" EntityType="Self.Daidoi" />
+    <EntitySet Name="giamsats" EntityType="Self.giamsat" />
+    <EntitySet Name="Hocviens" EntityType="Self.Hocvien" />
+    <EntitySet Name="HocVien_Phanloaikiluat" EntityType="Self.HocVien_Phanloaikiluat" />
+    <EntitySet Name="Hocvien_Phanloairenluyen" EntityType="Self.Hocvien_Phanloairenluyen" />
+    <EntitySet Name="Lops" EntityType="Self.Lop" />
+    <EntitySet Name="Phanloaikiluats" EntityType="Self.Phanloaikiluat" />
+    <EntitySet Name="Phanloairenluyens" EntityType="Self.Phanloairenluyen" />
+    <EntitySet Name="Quanlies" EntityType="Self.Quanly" />
+    <EntitySet Name="Quychuans" EntityType="Self.Quychuan" />
+    <AssociationSet Name="FK_lopdd" Association="Self.FK_lopdd">
+      <End Role="Daidoi" EntitySet="Daidois" />
+      <End Role="Lop" EntitySet="Lops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_qldd1" Association="Self.FK_qldd1">
+      <End Role="Daidoi" EntitySet="Daidois" />
+      <End Role="Quanly" EntitySet="Quanlies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gshv" Association="Self.FK_gshv">
+      <End Role="giamsat" EntitySet="giamsats" />
+      <End Role="Hocvien_Phanloairenluyen" EntitySet="Hocvien_Phanloairenluyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HVL" Association="Self.FK_HVL">
+      <End Role="Lop" EntitySet="Lops" />
+      <End Role="Hocvien" EntitySet="Hocviens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hvplkl" Association="Self.FK_hvplkl">
+      <End Role="Hocvien" EntitySet="Hocviens" />
+      <End Role="HocVien_Phanloaikiluat" EntitySet="HocVien_Phanloaikiluat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hvplrl" Association="Self.FK_hvplrl">
+      <End Role="Hocvien" EntitySet="Hocviens" />
+      <End Role="Hocvien_Phanloairenluyen" EntitySet="Hocvien_Phanloairenluyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hvkl" Association="Self.FK_hvkl">
+      <End Role="Phanloaikiluat" EntitySet="Phanloaikiluats" />
+      <End Role="HocVien_Phanloaikiluat" EntitySet="HocVien_Phanloaikiluat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hvrl" Association="Self.FK_hvrl">
+      <End Role="Phanloairenluyen" EntitySet="Phanloairenluyens" />
+      <End Role="Hocvien_Phanloairenluyen" EntitySet="Hocvien_Phanloairenluyen" />
+    </AssociationSet>
+    <FunctionImport Name="getHocvien" ReturnType="Collection(String)">
+      <Parameter Name="MaHV" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getmaplkl" ReturnType="Collection(String)" />
+    <FunctionImport Name="getmaplrl" ReturnType="Collection(String)" />
+    <FunctionImport Name="insert_HVKL">
+      <Parameter Name="Mahv_plkl" Mode="In" Type="String" />
+      <Parameter Name="Thoigian" Mode="In" Type="DateTime" />
+      <Parameter Name="MaHV" Mode="In" Type="String" />
+      <Parameter Name="MaPLKL" Mode="In" Type="String" />
+      <Parameter Name="Capdanhgia" Mode="In" Type="String" />
+      <Parameter Name="Nguoidanhgia" Mode="In" Type="String" />
+      <Parameter Name="Diemkiluat" Mode="In" Type="Int32" />
+      <Parameter Name="Diemhoctap" Mode="In" Type="Int32" />
+      <Parameter Name="Diemloisong" Mode="In" Type="Int32" />
+      <Parameter Name="Diemhoatdongdoan" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insert_HVRL">
+      <Parameter Name="Mahv_plrl" Mode="In" Type="String" />
+      <Parameter Name="Thoigian" Mode="In" Type="DateTime" />
+      <Parameter Name="MaHV" Mode="In" Type="String" />
+      <Parameter Name="MaPLRL" Mode="In" Type="String" />
+      <Parameter Name="MaGS" Mode="In" Type="String" />
+      <Parameter Name="Boi" Mode="In" Type="Double" />
+      <Parameter Name="Chaydai" Mode="In" Type="Double" />
+      <Parameter Name="Chayngan" Mode="In" Type="Double" />
+      <Parameter Name="nhayxa" Mode="In" Type="Double" />
+      <Parameter Name="xa" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spgetMaLop" ReturnType="Collection(Quanlykiluat1Model.spgetMaLop_Result)">
+      <Parameter Name="MaLop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spgetMaQl" ReturnType="Collection(Quanlykiluat1Model.spgetMaQl_Result)">
+      <Parameter Name="MaQL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spgetTableAllLop" ReturnType="Collection(Quanlykiluat1Model.spgetTableAllLop_Result)" />
+    <FunctionImport Name="spgetTableAN" ReturnType="Collection(Quanlykiluat1Model.spgetTableAN_Result)" />
+    <FunctionImport Name="spgetTableBD" ReturnType="Collection(Quanlykiluat1Model.spgetTableBD_Result)" />
+    <FunctionImport Name="spgetTableCNTT2" ReturnType="Collection(Quanlykiluat1Model.spgetTableCNTT2_Result)" />
+    <FunctionImport Name="spgettablegiamsat" ReturnType="Collection(Quanlykiluat1Model.spgettablegiamsat_Result)" />
+    <FunctionImport Name="spgetTableHVLop" ReturnType="Collection(Quanlykiluat1Model.spgetTableHVLop_Result)">
+      <Parameter Name="Malop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spgettableplkl" ReturnType="Collection(Quanlykiluat1Model.spgettableplkl_Result)" />
+    <FunctionImport Name="spgettableplrl" ReturnType="Collection(Quanlykiluat1Model.spgettableplrl_Result)" />
+    <FunctionImport Name="spgettablequychuanKL" ReturnType="Collection(Quanlykiluat1Model.spgettablequychuanKL_Result)" />
+    <FunctionImport Name="spgettablequychuanRl" ReturnType="Collection(Quanlykiluat1Model.spgettablequychuanRl_Result)" />
+    <FunctionImport Name="update_HVKL">
+      <Parameter Name="Mahv_plkl" Mode="In" Type="String" />
+      <Parameter Name="Thoigian" Mode="In" Type="DateTime" />
+      <Parameter Name="MaHV" Mode="In" Type="String" />
+      <Parameter Name="MaPLKL" Mode="In" Type="String" />
+      <Parameter Name="Capdanhgia" Mode="In" Type="String" />
+      <Parameter Name="Nguoidanhgia" Mode="In" Type="String" />
+      <Parameter Name="Diemkiluat" Mode="In" Type="Int32" />
+      <Parameter Name="Diemhoctap" Mode="In" Type="Int32" />
+      <Parameter Name="Diemloisong" Mode="In" Type="Int32" />
+      <Parameter Name="Diemhoatdongdoan" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="update_HVRL">
+      <Parameter Name="Mahv_plrl" Mode="In" Type="String" />
+      <Parameter Name="Thoigian" Mode="In" Type="DateTime" />
+      <Parameter Name="MaHV" Mode="In" Type="String" />
+      <Parameter Name="MaPLRL" Mode="In" Type="String" />
+      <Parameter Name="MaGS" Mode="In" Type="String" />
+      <Parameter Name="Boi" Mode="In" Type="Double" />
+      <Parameter Name="Chaydai" Mode="In" Type="Double" />
+      <Parameter Name="Chayngan" Mode="In" Type="Double" />
+      <Parameter Name="nhayxa" Mode="In" Type="Double" />
+      <Parameter Name="xa" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insert_giamsat">
+      <Parameter Name="Mags" Mode="In" Type="String" />
+      <Parameter Name="Tennguoigiamsat" Mode="In" Type="String" />
+      <Parameter Name="Chucvu" Mode="In" Type="String" />
+      <Parameter Name="Capbac" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="delete_giamsat">
+      <Parameter Name="Mags" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="update_giamsat">
+      <Parameter Name="Mags" Mode="In" Type="String" />
+      <Parameter Name="Tennguoigiamsat" Mode="In" Type="String" />
+      <Parameter Name="Chucvu" Mode="In" Type="String" />
+      <Parameter Name="Capbac" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spgettablehvkl" ReturnType="Collection(Quanlykiluat1Model.spgettablehvkl_Result)">
+      <Parameter Name="MaHV" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spgettablehvplkl" ReturnType="Collection(Quanlykiluat1Model.spgettablehvplkl_Result)">
+      <Parameter Name="MaHV" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spgetMaHV" ReturnType="Collection(Quanlykiluat1Model.spgetMaHV_Result)">
+      <Parameter Name="MaHV" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="spgetMaLop_Result">
+    <Property Type="String" Name="Malop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Matkhau" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Tenlop" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MaDD" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="spgetMaQl_Result">
+    <Property Type="String" Name="MaQL" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Matkhau" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Hoten" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Chucvu" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Capbac" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="MaDD" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="spgetTableAllLop_Result">
+    <Property Type="String" Name="Malop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Matkhau" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Tenlop" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MaDD" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="spgetTableAN_Result">
+    <Property Type="String" Name="Malop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Matkhau" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Tenlop" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MaDD" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="spgetTableBD_Result">
+    <Property Type="String" Name="Malop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Matkhau" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Tenlop" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MaDD" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="spgetTableCNTT2_Result">
+    <Property Type="String" Name="Malop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Matkhau" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Tenlop" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MaDD" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="spgettablegiamsat_Result">
+    <Property Type="String" Name="Mags" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Tennguoigiamsat" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Chucvu" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Capbac" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="spgetTableHVLop_Result">
+    <Property Type="String" Name="MaHV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Malop" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Tenlop" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="TenHV" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="GioiTinh" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Capbac" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Chucvu" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="spgettableplkl_Result">
+    <Property Type="String" Name="Mahv_plkl" Nullable="false" MaxLength="10" />
+    <Property Type="DateTime" Name="Thoigian" Nullable="false" Precision="23" />
+    <Property Type="String" Name="MaHV" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaPLKL" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Capdanhgia" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Nguoidanhgia" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Diemkiluat" Nullable="true" />
+    <Property Type="Int32" Name="Diemhoctap" Nullable="true" />
+    <Property Type="Int32" Name="Diemloisong" Nullable="true" />
+    <Property Type="Int32" Name="Diemhoatdongdoan" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spgettableplrl_Result">
+    <Property Type="String" Name="Mahv_plrl" Nullable="false" MaxLength="10" />
+    <Property Type="DateTime" Name="Thoigian" Nullable="false" Precision="23" />
+    <Property Type="String" Name="MaHV" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaPLRL" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaGS" Nullable="true" MaxLength="10" />
+    <Property Type="Double" Name="Boi" Nullable="true" />
+    <Property Type="Double" Name="Chaydai" Nullable="true" />
+    <Property Type="Double" Name="Chayngan" Nullable="true" />
+    <Property Type="Double" Name="nhayxa" Nullable="true" />
+    <Property Type="Int32" Name="xa" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spgettablequychuanKL_Result">
+    <Property Type="String" Name="MaQCRL" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Noidung" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Donvitinh" Nullable="true" MaxLength="20" />
+    <Property Type="Double" Name="Gioi" Nullable="true" />
+    <Property Type="Double" Name="Kha" Nullable="true" />
+    <Property Type="Double" Name="Trungbinh" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spgettablequychuanRl_Result">
+    <Property Type="String" Name="MaQCRL" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Noidung" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Donvitinh" Nullable="true" MaxLength="20" />
+    <Property Type="Double" Name="Gioi" Nullable="true" />
+    <Property Type="Double" Name="Kha" Nullable="true" />
+    <Property Type="Double" Name="Trungbinh" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spgettablehvkl_Result">
+    <Property Type="String" Name="Mahv_plkl" Nullable="false" MaxLength="10" />
+    <Property Type="DateTime" Name="Thoigian" Nullable="false" Precision="23" />
+    <Property Type="String" Name="MaHV" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaPLKL" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Capdanhgia" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Nguoidanhgia" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Diemkiluat" Nullable="true" />
+    <Property Type="Int32" Name="Diemhoctap" Nullable="true" />
+    <Property Type="Int32" Name="Diemloisong" Nullable="true" />
+    <Property Type="Int32" Name="Diemhoatdongdoan" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spgettablehvplkl_Result">
+    <Property Type="String" Name="MaHV" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Mahv_plkl" Nullable="false" MaxLength="10" />
+    <Property Type="DateTime" Name="Thoigian" Nullable="false" Precision="23" />
+    <Property Type="String" Name="MaPLKL" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Capdanhgia" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Nguoidanhgia" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="Diemkiluat" Nullable="true" />
+    <Property Type="Int32" Name="Diemhoctap" Nullable="true" />
+    <Property Type="Int32" Name="Diemloisong" Nullable="true" />
+    <Property Type="Int32" Name="Diemhoatdongdoan" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spgetMaHV_Result">
+    <Property Type="String" Name="MaHV" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenHV" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="GioiTinh" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Chucvu" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Capbac" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Malop" Nullable="true" MaxLength="10" />
+  </ComplexType>
+</Schema>

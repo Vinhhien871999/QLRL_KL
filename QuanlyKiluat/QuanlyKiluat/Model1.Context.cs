@@ -377,5 +377,33 @@ namespace QuanlyKiluat
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spgettablehvplkl_Result>("spgettablehvplkl", maHVParameter);
         }
+    
+        public virtual ObjectResult<spgetMaHV_Result> spgetMaHV(string maHV)
+        {
+            var maHVParameter = maHV != null ?
+                new ObjectParameter("MaHV", maHV) :
+                new ObjectParameter("MaHV", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spgetMaHV_Result>("spgetMaHV", maHVParameter);
+        }
+    
+        public virtual ObjectResult<getPLKL_DaiDoi_2_Result> getPLKL_DaiDoi_2()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getPLKL_DaiDoi_2_Result>("getPLKL_DaiDoi_2");
+        }
+    
+        public virtual ObjectResult<getPLKL_Lop_Result> getPLKL_Lop()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getPLKL_Lop_Result>("getPLKL_Lop");
+        }
+    
+        public virtual ObjectResult<spgettablephaihvplkl_Result> spgettablephaihvplkl(string maHV)
+        {
+            var maHVParameter = maHV != null ?
+                new ObjectParameter("MaHV", maHV) :
+                new ObjectParameter("MaHV", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spgettablephaihvplkl_Result>("spgettablephaihvplkl", maHVParameter);
+        }
     }
 }
