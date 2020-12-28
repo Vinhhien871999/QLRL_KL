@@ -17,7 +17,7 @@ namespace QuanlyKiluat
         {
             myQL = Models.QLDD.getMaQL(MaQL);
             InitializeComponent();
-            WindowState = FormWindowState.Maximized;
+            WindowState = FormWindowState.Maximized;    
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -64,6 +64,13 @@ namespace QuanlyKiluat
         private void btndaidoi_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new FormQLKL());
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
         }
     }
 }

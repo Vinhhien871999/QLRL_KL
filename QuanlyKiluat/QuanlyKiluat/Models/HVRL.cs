@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,23 @@ namespace QuanlyKiluat.Models
             var i = Models.Connection.ExcuteQuery("insert_HVRL",
                 System.Data.CommandType.StoredProcedure, paras, values);
             return i;
+        }
+        public int UpdateHVRL()
+        {
+            string[] paras = new string[10] { "@Mahv_plrl", "@Thoigian", "@MaHV",
+                "@MaPLRL", "@MaGS", "@Boi","@Chaydai", "@Chayngan", "@nhayxa","@xa"};
+            object[] values = new object[10] { Mahv_plrl, Thoigian, MaHV, MaPLRL, MaGS, Boi1, Chaydai1, Chayngan1, Nhayxa, Xa };
+            var i = Models.Connection.ExcuteQuery("update_HVRL",
+                CommandType.StoredProcedure, paras, values);
+            return i;
+        }
+        public static DataTable getmahvrl()
+        {
+            return Models.Connection.getData("getmaplrl", CommandType.StoredProcedure);
+        }
+        public static DataTable gettableplrl()
+        {
+            return Models.Connection.getData("spgettableplrl", CommandType.StoredProcedure);
         }
     }
 }

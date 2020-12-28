@@ -60,6 +60,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormChinhsuaKL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChinhsuaKL.Designer.cs">
+      <DependentUpon>FormChinhsuaKL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChinhsuaRl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChinhsuaRl.Designer.cs">
+      <DependentUpon>FormChinhsuaRl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCuaLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCuaLop.Designer.cs">
+      <DependentUpon>FormCuaLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDanhgia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +90,23 @@
     <Compile Include="FormLop.Designer.cs">
       <DependentUpon>FormLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNguoigiamsat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNguoigiamsat.Designer.cs">
+      <DependentUpon>FormNguoigiamsat.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNhapketqua.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormNhapketqua.Designer.cs">
       <DependentUpon>FormNhapketqua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNhapSuacualop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhapSuacualop.Designer.cs">
+      <DependentUpon>FormNhapSuacualop.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQLKL.cs">
       <SubType>Form</SubType>
@@ -89,6 +119,12 @@
     </Compile>
     <Compile Include="FormQLRL.Designer.cs">
       <DependentUpon>FormQLRL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRLcualop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRLcualop.Designer.cs">
+      <DependentUpon>FormRLcualop.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThemKQ.cs">
       <SubType>Form</SubType>
@@ -103,13 +139,26 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Connection.cs" />
+    <Compile Include="Models\giamsat.cs" />
+    <Compile Include="Models\Hocvien.cs" />
+    <Compile Include="Models\HVKL.cs" />
     <Compile Include="Models\HVRL.cs" />
     <Compile Include="Models\Lop.cs" />
     <Compile Include="Models\QLDD.cs" />
+    <Compile Include="Models\QuyChuan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChinhsuaKL.resx">
+      <DependentUpon>FormChinhsuaKL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChinhsuaRl.resx">
+      <DependentUpon>FormChinhsuaRl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCuaLop.resx">
+      <DependentUpon>FormCuaLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDanhgia.resx">
       <DependentUpon>FormDanhgia.cs</DependentUpon>
@@ -117,14 +166,23 @@
     <EmbeddedResource Include="FormLop.resx">
       <DependentUpon>FormLop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNguoigiamsat.resx">
+      <DependentUpon>FormNguoigiamsat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNhapketqua.resx">
       <DependentUpon>FormNhapketqua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhapSuacualop.resx">
+      <DependentUpon>FormNhapSuacualop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLKL.resx">
       <DependentUpon>FormQLKL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLRL.resx">
       <DependentUpon>FormQLRL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRLcualop.resx">
+      <DependentUpon>FormRLcualop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemKQ.resx">
       <DependentUpon>FormThemKQ.cs</DependentUpon>

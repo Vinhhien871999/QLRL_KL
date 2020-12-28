@@ -42,7 +42,28 @@ namespace QuanlyKiluat.Models
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+        public static DataTable SeachInDataBase(string query)
+        {
+            DataTable data = new DataTable();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connStr))
+                {
+                    connection.Open();
 
+                    SqlCommand cmd = connection.CreateCommand();
+                    cmd.CommandText = query;
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(data);
+                    connection.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erorr");
+            }
+            return data;
+        }
         public static DataSet getData(string query)
         {
             DataSet ds = new DataSet();

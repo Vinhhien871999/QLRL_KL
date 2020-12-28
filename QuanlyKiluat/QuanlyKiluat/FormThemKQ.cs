@@ -17,7 +17,12 @@ namespace QuanlyKiluat
         public FormThemKQ()
         {
             InitializeComponent();
+            hienthidanhsach();
             
+        }
+        public void hienthidanhsach()
+        {
+            dgvquychuan.DataSource = Models.QuyChuan.getTableQuyChuanRL();
         }
         public FormThemKQ(string id) : this()
         {
@@ -32,6 +37,7 @@ namespace QuanlyKiluat
         {
 
         }
+
         string convertToDateSQL(string dateC)
         {
             string result;
@@ -114,6 +120,17 @@ namespace QuanlyKiluat
                     }
                 }
             }         
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtkqrl_Click(object sender, EventArgs e)
+        {
+            txtkqrl.DataSource = Models.HVRL.getmahvrl();
+            txtkqrl.DisplayMember = "MaPLRL";
         }
     }
 }

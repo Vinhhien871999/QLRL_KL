@@ -74,5 +74,10 @@ namespace QuanlyKiluat
             QuanlyKiluat.FormDanhgia tai = new QuanlyKiluat.FormDanhgia(id);
             tai.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

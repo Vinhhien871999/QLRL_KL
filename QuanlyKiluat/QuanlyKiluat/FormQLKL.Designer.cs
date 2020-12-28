@@ -33,7 +33,7 @@
             this.btntonghopdulieucanha = new Guna.UI.WinForms.GunaButton();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.btndanggia = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.btnchinhsua = new Guna.UI.WinForms.GunaButton();
             this.panelmain = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             this.panel2.Controls.Add(this.btntonghopdulieucanha);
             this.panel2.Controls.Add(this.gunaButton3);
             this.panel2.Controls.Add(this.btndanggia);
-            this.panel2.Controls.Add(this.gunaButton1);
+            this.panel2.Controls.Add(this.btnchinhsua);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 2);
             this.panel2.Name = "panel2";
@@ -130,28 +130,29 @@
             this.btndanggia.Text = "                    Đánh Giá";
             this.btndanggia.Click += new System.EventHandler(this.btndanggia_Click);
             // 
-            // gunaButton1
+            // btnchinhsua
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(0, 0);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(291, 52);
-            this.gunaButton1.TabIndex = 2;
-            this.gunaButton1.Text = "                 Tự Đánh Giá";
+            this.btnchinhsua.AnimationHoverSpeed = 0.07F;
+            this.btnchinhsua.AnimationSpeed = 0.03F;
+            this.btnchinhsua.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnchinhsua.BorderColor = System.Drawing.Color.Black;
+            this.btnchinhsua.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnchinhsua.FocusedColor = System.Drawing.Color.Empty;
+            this.btnchinhsua.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnchinhsua.ForeColor = System.Drawing.Color.White;
+            this.btnchinhsua.Image = null;
+            this.btnchinhsua.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnchinhsua.Location = new System.Drawing.Point(0, 0);
+            this.btnchinhsua.Name = "btnchinhsua";
+            this.btnchinhsua.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnchinhsua.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnchinhsua.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnchinhsua.OnHoverImage = null;
+            this.btnchinhsua.OnPressedColor = System.Drawing.Color.Black;
+            this.btnchinhsua.Size = new System.Drawing.Size(291, 52);
+            this.btnchinhsua.TabIndex = 2;
+            this.btnchinhsua.Text = "                 Chỉnh Sửa";
+            this.btnchinhsua.Click += new System.EventHandler(this.btnchinhsua_Click);
             // 
             // panelmain
             // 
@@ -181,7 +182,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton btnchinhsua;
         private Guna.UI.WinForms.GunaButton btntonghopdulieucanha;
         private Guna.UI.WinForms.GunaButton gunaButton3;
         private Guna.UI.WinForms.GunaButton btndanggia;

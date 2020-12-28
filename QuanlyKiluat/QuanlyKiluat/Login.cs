@@ -65,18 +65,24 @@ namespace QuanlyKiluat
             this.Hide();
             nv.Show();
         }
+        void Lop(string malop)
+        {
+            QuanlyKiluat.FormCuaLop nv = new QuanlyKiluat.FormCuaLop(malop);
+            this.Hide();
+            nv.Show();
+        }
         private void btndangnhap_Click(object sender, EventArgs e)
         {
             Button login = sender as Button;
-            //List<List<string>> SV = Models.SinhVien.getMaSV();
+            List<List<string>> SV = Models.Lop.getmalop();
             List<List<string>> NV = Models.QLDD.getMaQL();
             string maDN = textBoxuser.Text;
             string matKhau = textBoxpass.Text;
-            //if (SV[0].Contains(maDN.ToUpper()) && SV[1][SV[0].IndexOf(maDN.ToUpper())] == matKhau)
-            //{
-            //    SinhVien(maDN);
-            //}
-            //else 
+            if (SV[0].Contains(maDN.ToUpper()) && SV[1][SV[0].IndexOf(maDN.ToUpper())] == matKhau)
+            {
+                Lop(maDN);
+            }
+            else
             if (NV[0].Contains(maDN.ToUpper()) && NV[1][NV[0].IndexOf(maDN.ToUpper())] == matKhau)
             {
                 QLDD(maDN);

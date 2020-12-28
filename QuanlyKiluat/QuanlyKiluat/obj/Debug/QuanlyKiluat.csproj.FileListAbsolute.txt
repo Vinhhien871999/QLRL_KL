@@ -10,10 +10,16 @@ D:\SQl\QuanlyKiluat\QuanlyKiluat\bin\Debug\Guna.UI.dll
 D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.csproj.CopyComplete
 D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormQLKL.resources
 D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.Login.resources
-D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.csprojAssemblyReference.cache
 D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormNhapketqua.resources
 D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormQLRL.resources
 D:\SQl\QuanlyKiluat\QuanlyKiluat\bin\Debug\Bunifu_UI_v1.52.dll
 D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormThemKQ.resources
 D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormLop.resources
 D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormDanhgia.resources
+D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormChinhsuaRl.resources
+D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormChinhsuaKL.resources
+D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormCuaLop.resources
+D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormRLcualop.resources
+D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormNhapSuacualop.resources
+D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.csprojAssemblyReference.cache
+D:\SQl\QuanlyKiluat\QuanlyKiluat\obj\Debug\QuanlyKiluat.FormNguoigiamsat.resources

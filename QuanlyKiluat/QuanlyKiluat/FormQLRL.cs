@@ -36,5 +36,10 @@ namespace QuanlyKiluat
         {
             AbrirFormEnPanel(new FormNhapketqua());
         }
+
+        private void btnchinhsua_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FormChinhsuaRl());
+        }
     }
 }
