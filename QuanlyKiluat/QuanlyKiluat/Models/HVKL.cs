@@ -95,5 +95,12 @@ namespace QuanlyKiluat.Models
         {
             return Models.Connection.getData("spgettableplkl", CommandType.StoredProcedure);
         }
+        public static DataTable gettablehvplkl(string MaHV)
+        {
+            DataTable dt = new DataTable();
+            dt = Models.Connection.getData("spgettablehvplkl", CommandType.StoredProcedure,
+                new string[1] { "@MaHV" }, new object[1] { MaHV });
+            return dt;
+        }
     }
 }

@@ -66,7 +66,7 @@ namespace QuanlyKiluat
             int pos = dgvHv.SelectedRows[0].Index;
             DataGridViewRow temp = this.dgvHv.Rows[pos];
             string id = temp.Cells[0].Value.ToString().Trim();
-            QuanlyKiluat.FormDanhgia tai = new QuanlyKiluat.FormDanhgia(id);
+            QuanlyKiluat.FormNhapsuaKLcualop tai = new QuanlyKiluat.FormNhapsuaKLcualop(id);
             tai.ShowDialog();
         }
     }

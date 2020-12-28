@@ -36,5 +36,6 @@ namespace QuanlyKiluat.Models
         {
             return Models.Connection.getData("spgettablegiamsat", CommandType.StoredProcedure);
         }
+    
     }
 }

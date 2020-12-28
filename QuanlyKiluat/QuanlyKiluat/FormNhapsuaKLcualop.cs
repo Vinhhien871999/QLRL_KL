@@ -10,37 +10,32 @@ using System.Windows.Forms;
 
 namespace QuanlyKiluat
 {
-    
-    public partial class FormNhapSuacualop : Form
+    public partial class FormNhapsuaKLcualop : Form
     {
-        Models.HVRL myHvRl;
+        Models.HVKL myhvkl;
         string id_gv;
-        public FormNhapSuacualop()
+        public FormNhapsuaKLcualop()
         {
             InitializeComponent();
-            hienthidanhsach();
             end();
+            hienthidanhsach();
         }
-        public FormNhapSuacualop(string id) : this()
+        public FormNhapsuaKLcualop(string id) : this()
         {
             Models.Connection data = new Models.Connection();
             id_gv = id;
             string query = "EXEC dbo. getHocvien '" + id + "'";
             DataTable info = data.getDataSet(query).Tables[0];
             lbmahv.Text = info.Rows[0]["MaHV"].ToString().Trim();
-            dgvchinhsuarl.DataSource = Models.HVRL.gettablehvplrl(info.Rows[0]["MaHV"].ToString().Trim());
+            dgvchinhsuarl.DataSource = Models.HVKL.gettablehvplkl(info.Rows[0]["MaHV"].ToString().Trim());
+        }
+        private void FormNhapsuaKLcualop_Load(object sender, EventArgs e)
+        {
+
         }
         public void hienthidanhsach()
         {
-           // dgvchinhsuarl.DataSource = Models.HVRL.gettablehvplrl();          
-        }
-        public void end()
-        {
-            txtboi.Enabled = txtchaydai.Enabled = txtchayngan.Enabled = txtgs.Enabled = txtkqrl.Enabled = txtnhayxa.Enabled = txtxa.Enabled = false;
-        }
-        public void unend()
-        {
-            txtboi.Enabled = txtchaydai.Enabled = txtchayngan.Enabled = txtgs.Enabled = txtkqrl.Enabled = txtnhayxa.Enabled = txtxa.Enabled = true;
+            //dgvchinhsuarl.DataSource = Models.HVKL.gettablehvplrl(lbmahv.Text);
         }
         string convertToDateSQL(string dateC)
         {
@@ -55,6 +50,14 @@ namespace QuanlyKiluat
             btnSVSua.Visible = btnSVXoa.Visible =
                 btnSVThem.Visible = !btnSVSua.Visible;
             btnSVHuy.Visible = btnSVLuu.Visible = !btnSVLuu.Visible;
+        }
+        public void end()
+        {
+            txtcdg.Enabled = txtdkl.Enabled = txthdd.Enabled = txtht.Enabled = txtkqkl.Enabled = txtls.Enabled = txtndg.Enabled = false;
+        }
+        public void unend()
+        {
+            txtcdg.Enabled = txtdkl.Enabled = txthdd.Enabled = txtht.Enabled = txtkqkl.Enabled = txtls.Enabled = txtndg.Enabled = true;
         }
         private void btnSVThem_Click(object sender, EventArgs e)
         {
@@ -77,10 +80,10 @@ namespace QuanlyKiluat
             if (btnSVLuu.Tag.ToString() == "Them")
             {
                 string thoigian = convertToDateSQL(dtpthoigian.Value.ToString("dd/MM/yyy"));
-                myHvRl = new Models.HVRL(lbhvrl.Text, thoigian, lbmahv.Text, txtkqrl.Text, txtgs.Text
-                    , txtboi.Text, txtchaydai.Text, txtchayngan.Text,
-                    txtnhayxa.Text, txtxa.Text);
-                var i = myHvRl.InsertHVRL();
+                myhvkl = new Models.HVKL(lbhvkl.Text, thoigian, lbmahv.Text, txtkqkl.Text, txtcdg.Text
+                    , txtndg.Text, txtdkl.Text, txtht.Text,
+                    txtls.Text, txthdd.Text);
+                var i = myhvkl.InsertHVKL();
                 if (i == 0)
                 {
                     MessageBox.Show("Thêm mới thất bại !");
@@ -89,25 +92,31 @@ namespace QuanlyKiluat
                 {
                     MessageBox.Show("Thêm mới thành công !");
                     hienthidanhsach();
+
                 }
             }
             if (btnSVLuu.Tag.ToString() == "Sua")
             {
                 string thoigian = convertToDateSQL(dtpthoigian.Value.ToString("dd/MM/yyy"));
-                myHvRl = new Models.HVRL(lbhvrl.Text, thoigian, lbmahv.Text, txtkqrl.Text, txtgs.Text
-                    , txtboi.Text, txtchaydai.Text, txtchayngan.Text,
-                    txtnhayxa.Text, txtxa.Text);
-                var i = myHvRl.UpdateHVRL();
+                myhvkl = new Models.HVKL(lbhvkl.Text, thoigian, lbmahv.Text, txtkqkl.Text, txtcdg.Text
+                    , txtndg.Text, txtdkl.Text, txtht.Text,
+                    txtls.Text, txthdd.Text);
+                var i = myhvkl.UpdateHVKL();
                 if (i == 0)
                 {
-                    MessageBox.Show("Sửa thất bại !");
+                    MessageBox.Show("Sửa mới thất bại !");
                 }
                 else
                 {
-                    MessageBox.Show("Sửa thành công !");
+                    MessageBox.Show("Sửa mới thành công !");
                     hienthidanhsach();
                 }
             }
+        }
+
+        private void btnSVXoa_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btnSVHuy_Click(object sender, EventArgs e)
@@ -116,26 +125,21 @@ namespace QuanlyKiluat
             end();
         }
 
-        private void btnSVXoa_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void dgvchinhsuarl_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
             if (index >= 0)
             {
-                lbhvrl.Text = dgvchinhsuarl.Rows[index].Cells["Mahv_plrl"].Value.ToString();
+                lbhvkl.Text = dgvchinhsuarl.Rows[index].Cells["Mahv_plkl"].Value.ToString();
                 lbmahv.Text = dgvchinhsuarl.Rows[index].Cells["MaHV"].Value.ToString();
                 dtpthoigian.Text = dgvchinhsuarl.Rows[index].Cells["Thoigian"].Value.ToString();
-                txtkqrl.Text = dgvchinhsuarl.Rows[index].Cells["MaPLRL"].Value.ToString();
-                txtgs.Text = dgvchinhsuarl.Rows[index].Cells["MaGS"].Value.ToString();
-                txtboi.Text = dgvchinhsuarl.Rows[index].Cells["Boi"].Value.ToString();
-                txtchaydai.Text = dgvchinhsuarl.Rows[index].Cells["Chaydai"].Value.ToString();
-                txtchayngan.Text = dgvchinhsuarl.Rows[index].Cells["Chayngan"].Value.ToString();
-                txtnhayxa.Text = dgvchinhsuarl.Rows[index].Cells["nhayxa"].Value.ToString();
-                txtxa.Text = dgvchinhsuarl.Rows[index].Cells["Xa"].Value.ToString();
+                txtkqkl.Text = dgvchinhsuarl.Rows[index].Cells["MaPLKL"].Value.ToString();
+                txtcdg.Text = dgvchinhsuarl.Rows[index].Cells["Capdanhgia"].Value.ToString();
+                txtndg.Text = dgvchinhsuarl.Rows[index].Cells["Nguoidanhgia"].Value.ToString();
+                txtls.Text = dgvchinhsuarl.Rows[index].Cells["Diemloisong"].Value.ToString();
+                txtht.Text = dgvchinhsuarl.Rows[index].Cells["Diemhoctap"].Value.ToString();
+                txtdkl.Text = dgvchinhsuarl.Rows[index].Cells["Diemkiluat"].Value.ToString();
+                txthdd.Text = dgvchinhsuarl.Rows[index].Cells["Diemhoatdongdoan"].Value.ToString();
             }
         }
     }

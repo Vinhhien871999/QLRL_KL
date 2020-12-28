@@ -12,17 +12,30 @@ namespace QuanlyKiluat
 {
     public partial class FormNguoigiamsat : Form
     {
+        Models.giamsat mygs;
         public FormNguoigiamsat()
         {
             InitializeComponent();
             hienthidanhsach();
             txtgs.Enabled = false;
+            end();
         }
         public void hienthidanhsach()
         {
             dgvgiamsat.DataSource = Models.giamsat.getTableGiamsat();
         }
-
+        public void end()
+        {
+            txtcapbac.Enabled = false;
+            txtchucvu.Enabled = false;
+            txttengs.Enabled = false;
+        }
+        public void unend()
+        {
+            txtcapbac.Enabled = true;
+            txtchucvu.Enabled = true;
+            txttengs.Enabled = true;
+        }
         private void dgvgiamsat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -46,6 +59,7 @@ namespace QuanlyKiluat
             btnSVLuu.Tag = "Them";
             btnSVHuy.Tag = "Them";
             btnReload();
+            unend();
         }
 
         private void btnSVSua_Click(object sender, EventArgs e)
@@ -53,11 +67,59 @@ namespace QuanlyKiluat
             btnReload();
             btnSVLuu.Tag = "Sua";
             btnSVHuy.Tag = "Sua";
+            unend();
         }
-
         private void btnSVLuu_Click(object sender, EventArgs e)
         {
+            if (btnSVLuu.Tag.ToString() == "Them")
+            {
+                var db = new Quanlykiluat1Entities();
+                var i = db.insert_giamsat(txtgs.Text, txttengs.Text, txtchucvu.Text, txtcapbac.Text);
+                if (i == 0)
+                {
+                    MessageBox.Show("Thêm mới thất bại !");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm mới thành công !");
+                    hienthidanhsach();
+                }
+            }
+            if (btnSVLuu.Tag.ToString() == "Sua")
+            {
+                var db = new Quanlykiluat1Entities();
+                var i = db.update_giamsat(txtgs.Text, txttengs.Text, txtchucvu.Text, txtcapbac.Text);
+                if (i == 0)
+                {
+                    MessageBox.Show("Sửa thất bại !");
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thành công !");
+                    hienthidanhsach();
+                }
+            }
+        }
 
+        private void btnSVHuy_Click(object sender, EventArgs e)
+        {
+            btnReload();
+            end();
+        }
+
+        private void btnSVXoa_Click(object sender, EventArgs e)
+        {
+            var db = new Quanlykiluat1Entities();
+            var i = db.delete_giamsat(txtgs.Text);
+            if (i == 0)
+            {
+                MessageBox.Show("Xóa thất bại !");
+            }
+            else
+            {
+                MessageBox.Show("Xóa thành công !");
+                hienthidanhsach();
+            }
         }
     }
 }

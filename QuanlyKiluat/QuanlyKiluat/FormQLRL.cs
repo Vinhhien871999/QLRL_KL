@@ -41,5 +41,10 @@ namespace QuanlyKiluat
         {
             AbrirFormEnPanel(new FormChinhsuaRl());
         }
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FormNguoigiamsat());
+        }
     }
 }

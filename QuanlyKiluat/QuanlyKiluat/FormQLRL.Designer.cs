@@ -144,6 +144,7 @@
             this.gunaButton3.Size = new System.Drawing.Size(341, 52);
             this.gunaButton3.TabIndex = 4;
             this.gunaButton3.Text = "                 Người Giám Sát";
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
             // panelmain
             // 
